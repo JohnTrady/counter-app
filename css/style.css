@@ -86,8 +86,14 @@ body {
     display: flex;
   
     align-items: center;
-    gap: 30px;
+    
 }
+
+.counter__buttons:not(:last-child) {
+    margin-right: 30px;
+}
+
+
 .buttons {
   
 }
@@ -147,11 +153,9 @@ body {
     }
     
 
-    .counter__buttons {
-        
-        gap: 15px;
+    .counter__buttons:not(:last-child) {
+        margin-right: 15px;
     }
-
     .button {
         flex: 33.3333%;
         font-size: 16px;
@@ -173,11 +177,9 @@ body {
 
 @media (max-width: 499.98px) {
    
-    .counter__buttons {
-     
-        gap: 10px;
+    .counter__buttons:not(:last-child) {
+        margin-right: 10px;
     }
-
     .button {
         padding: 0px 5px;
         font-size: 14px;
@@ -198,10 +200,7 @@ body {
         font-size: 150px;
         color: #fff;
     }
-    .counter__buttons {
-     
-        gap: 10px;
-    }
+  
 
     
 
