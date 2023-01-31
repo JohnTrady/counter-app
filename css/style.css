@@ -89,7 +89,7 @@ body {
     
 }
 
-.counter__buttons:not(:last-child) {
+.button:not(:last-child) {
     margin-right: 30px;
 }
 
@@ -153,7 +153,7 @@ body {
     }
     
 
-    .counter__buttons:not(:last-child) {
+    .button:not(:last-child) {
         margin-right: 15px;
     }
     .button {
@@ -177,7 +177,7 @@ body {
 
 @media (max-width: 499.98px) {
    
-    .counter__buttons:not(:last-child) {
+    .button:not(:last-child) {
         margin-right: 10px;
     }
     .button {
