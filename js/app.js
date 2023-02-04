@@ -1,41 +1,27 @@
 'use strict';
 
-const increaseButton = document.querySelector('#increase-button');
-const decreaseButton = document.querySelector('#decrease-button');
-const resetButton =  document.querySelector('#reset-button');
+let count = 0;
 const value =  document.querySelector('#counter-value');
+const buttons = document.querySelectorAll(".button");
 
 
-const increase = () => {
-    
-    value.textContent = Number(value.textContent) + 1;
-    if(value.textContent > 0) {
-        value.style.color = '#23B123';   
-    }else if(Number(value.textContent) === 0) {
-        value.style.color = 'white';   
-    }
-    
-};
-
-const decrease = () => {
-    
-    value.textContent = Number(value.textContent) - 1;
-    if(value.textContent < 0) {
-        value.style.color = 'red';   
-    } else if(Number(value.textContent) === 0) {
-        value.style.color = 'white';   
-    }
-   
-      
-};
-const reset = () => {
-    value.textContent = 0;
-    value.style.color = '#fff';
-};
-
-
-
-
-increaseButton.addEventListener('click', increase);
-decreaseButton.addEventListener('click', decrease);
-resetButton.addEventListener('click',reset);
+buttons.forEach(button => {
+    button.addEventListener('click', (e)=>{
+        const classBtn = e.currentTarget.classList;
+      if(classBtn.contains('increase-button')) {
+        count++;
+      } else if (classBtn.contains('decrease-button')) {
+         count--;
+      } else {
+         count = 0;
+      }
+      if(count > 0) {
+         value.style.color = '#23B123';
+      } else  if (count < 0) {
+        value.style.color = 'red';
+      }  else {
+        value.style.color = '#FFFFFF';
+      }
+      value.textContent = count;
+    });
+});
